@@ -1,0 +1,5 @@
+controllers:
+    resource:
+        path: ../src/Jason/CoreBundle/Controller/
+        namespace: Jason\CoreBundle\Controller
+    type: attribute
