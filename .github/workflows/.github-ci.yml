@@ -1,4 +1,4 @@
-name: Balancer CI-CD pipelines
+name: Base pipelines
 
 on:
   push:
