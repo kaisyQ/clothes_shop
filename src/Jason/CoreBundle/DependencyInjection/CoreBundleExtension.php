@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Jason\CoreBundle\DependencyInjection;
 
@@ -13,12 +15,11 @@ class CoreBundleExtension extends Extension
     public function load(array $configs, ContainerBuilder $container): void
     {
         $config = $this->processConfiguration(
-            $this->getConfiguration([], $container), 
+            $this->getConfiguration([], $container),
             $configs
         );
 
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/Config'));
-
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/Config'));
 
         $loader->load('services.yml');
     }
