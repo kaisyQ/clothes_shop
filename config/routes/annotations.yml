@@ -1,0 +1,3 @@
+controllers:
+    resource: '../src/Jason/CoreBundle/Presentation/Controller/ProductController'
+    type: annotation

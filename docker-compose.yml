@@ -4,8 +4,11 @@ services:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
+    user: "${UID}:${GID}"
     environment:
-      - APP_ENV=prod
+      - APP_ENV=dev
+      - UID=${UID}
+      - GID=${GID}
     ports:
       - "${APP_PORT}:${APP_PORT}"
     depends_on:
