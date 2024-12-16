@@ -1,6 +1,7 @@
 services:
 
   app:
+    container_name: app
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
@@ -14,6 +15,7 @@ services:
       - ./:/var/www/app
 
   web:
+    container_name: web
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
@@ -36,12 +38,13 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "${POSTGRES_PORT}:5432"
-    container_name: balancer_database
+    container_name: database
     restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
 
   rabbitmq:
+    container_name: queue
     image: rabbitmq:4-management-alpine
     ports:
       - "${RABBIT_MQ_PORT}:5672"
@@ -53,10 +56,12 @@ services:
       - rabbitmq_data:/var/lib/rabbitmq
 
   redis:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     image: redis:alpine
-    container_name: redis_container
+    container_name: cache
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT}:${REDIS_PORT}"
     volumes:
       - ./redis_data:/data
     restart: unless-stopped
@@ -64,3 +69,4 @@ services:
 volumes:
   db-data:
   rabbitmq_data:
+  redis_data:
