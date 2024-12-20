@@ -1,0 +1,8 @@
+products:
+    path: /products
+    controller:  Jason\CoreBundle\Presentation\Controller\ProductController::showProducts
+
+
+admin:
+    path: /admin
+    controller:  Jason\AdminBundle\Presentation\Controller\DashboardController::index
