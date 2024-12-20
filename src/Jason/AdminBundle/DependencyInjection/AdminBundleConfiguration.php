@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jason\CoreBundle\DependencyInjection;
+namespace Jason\AdminBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-class CoreBundleConfiguration implements ConfigurationInterface
+class AdminBundleConfiguration implements ConfigurationInterface
 {
     /** @var string */
-    private const CONFIG_NAME = 'jason_corebunle';
+    private const CONFIG_NAME = 'jason_adminbunle';
 
     public function getConfigTreeBuilder(): TreeBuilder
     {

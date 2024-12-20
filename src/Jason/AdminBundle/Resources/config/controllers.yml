@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        public: true
+        autowire: true 
+        autoconfigure: true
+    
+    Jason\AdminBundle\Presentation\Controller\DashboardController:
+        tags: ['controller.service_arguments']
+  

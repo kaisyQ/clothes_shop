@@ -39,7 +39,6 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "${POSTGRES_PORT}:5432"
-    container_name: balancer_database
     restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
