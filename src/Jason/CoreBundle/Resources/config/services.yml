@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        public: true
+        autowire: true 
+        autoconfigure: true
+
+    Jason\CoreBundle\Presentation\Controller\ProductController:
+        tags: ['controller.service_arguments']
+        
